@@ -1,0 +1,110 @@
+/*For large screens*/
+:root {
+    --menu-justify-content: left;
+    --menu-flex-direction: row;
+    --title-bgcolor: #3F6D8E;
+    --desc-bgcolor: #658DA9;
+    --price-bgcolor: #154465;
+    --foot-bgcolor:  #052D4A;
+    --gridtemplate: 
+    "head head"
+    "title title"
+    "video description"
+    "pricing pricing"
+    "footer footer";
+}
+
+@media (max-width: 399px){ 
+  :root {
+    --title-bgcolor: #3F6D8E;
+    --desc-bgcolor: #658DA9;
+    --price-bgcolor: #154465;
+    --foot-bgcolor:  #052D4A;
+    --menu-justify-content: center;
+    --menu-flex-direction: column; 
+    --gridtemplate:
+    "head"
+    "title"
+    "video"
+    "description"
+    "pricing"
+    "footer"; 
+  }
+  .optionscontainer a {
+  display: block;
+  }
+} 
+
+body {
+  display:grid;
+  grid-template-areas: var(--gridtemplate);
+  align-content: start;
+  margin: auto;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  grid-gap: 5px;
+  padding-top: 3em;
+}
+header {
+ grid-area: head;
+ position: fixed;
+ background-color: white;
+ width: 100%;
+}
+#header-image {
+ width: 100px;
+}
+.menu{
+ display: flex;
+ justify-content: var(--menu-justify-content);
+ align-items: center;
+ flex-direction: var(--menu-flex-direction);
+}
+.optionscontainer a {
+ float: left;
+ padding: 10px;
+ font-size: 1.1em;
+ text-decoration: none;
+ color: #000;
+ transition: .3s background-color; 
+}
+.optionscontainer a:hover {
+ background-color: grey;
+ color:white;
+}
+ptitle {
+ grid-area: title;
+ background-color: var(--title-bgcolor);
+ height: 25vh;
+}
+tmiddle {
+ background-color: var(--desc-bgcolor);
+ max-width: 400px;
+ grid-area: video;
+ height: 40vh;
+}
+dmiddle {
+ grid-area: description;
+ background-color: var(--desc-bgcolor);
+ height: 40vh;
+}
+pmiddle {
+ background-color: var(--price-bgcolor);
+ grid-area: pricing;
+ height: 100vh;
+}
+footer {
+ background-color: var(--foot-bgcolor);
+ grid-area: footer;
+ height: 10vh;
+}
+.producttitle {
+    text-align: center;
+    font-size: 8em;
+    color: white;
+}
+#video{
+    max-width: 100%;
+    float: center;
+}
+
