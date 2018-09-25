@@ -1,69 +1,47 @@
-/*For large screens*/
-:root {
-    --menu-justify-content: left;
-    --menu-flex-direction: row;
-    --title-bgcolor: #3F6D8E;
-    --desc-bgcolor: #658DA9;
-    --price-bgcolor: #154465;
-    --foot-bgcolor:  #052D4A;
-    --gridtemplate: 
-    "head head"
-    "title title"
-    "video description"
-    "pricing pricing"
-    "footer footer";
+:root { /*For larger screents*/
+  --menu-float: left;
+  --menu-position: fixed;
+  --content-float: right;
 }
-
-@media (max-width: 399px){ 
-  :root {
-    --title-bgcolor: #3F6D8E;
-    --desc-bgcolor: #658DA9;
-    --price-bgcolor: #154465;
-    --foot-bgcolor:  #052D4A;
-    --menu-justify-content: center;
-    --menu-flex-direction: column; 
-    --gridtemplate:
-    "head"
-    "title"
-    "video"
-    "description"
-    "pricing"
-    "footer"; 
-  }
-  .optionscontainer a {
-  display: block;
-  }
-} 
-
-body {
-  display:grid;
-  grid-template-areas: var(--gridtemplate);
+@media (max-width: 600px){ 
+  --menu-float: none;
+  --menu-position: static;
+  --content-float: none;
+}
+body { /*For smaller screents*/
   align-content: start;
   margin: auto;
   font-size: 1em;
   font-family: 'Open Sans', sans-serif;
-  grid-gap: 5px;
-  padding-top: 3em;
 }
-.navbar{
- display: flex;
- justify-content: var(--menu-justify-content);
- align-items: center;
- flex-direction: var(--menu-flex-direction);
- transition: .3s background-color; 
- text-decoration: none;
- font-size: 1.1em;
-}
-.navbar a:hover {
- background-color: grey;
- color:white;
-}
-.menu{
- list-style-type: none;
-}
-footer {
- background-color: var(--foot-bgcolor);
- grid-area: footer;
- height: 10vh;
+
+
+navbar{
+   display: flex;
+   float: var(--menu-float);
+   position: var(--menu-position);
+   width: 25vw; 
+   justify-content: flex-start; /*(alignment across primary axis, usually horizontal*/
+   align-items: flex-start; /*(alignment across secondary axis, usually vertical*/
+   grid-area: nav;
+   transition: .3s background-color; 
+   font-size: 1.1em;
+  }
+  navbar a:hover {
+   background-color: grey;
+   color:white;
+  }
+  .menu{
+   list-style-type: none;
+  }
+  .nav-link{
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+  }
+.content {
+  grid-area: content;
+  float: var(--content-float);
+  width: 75vw;
 }
 
