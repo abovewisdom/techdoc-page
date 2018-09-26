@@ -1,19 +1,21 @@
-:root { /*For larger screents*/
+:root { /*For larger screens*/
   --menu-float: left;
   --menu-position: fixed;
   --content-float: right;
 }
 @media (max-width: 600px){ 
-  --menu-float: none;
-  --menu-position: static;
-  --content-float: none;
-}
+  :root{
+    --menu-float: none;
+    --menu-position: static;
+    --content-float: none;
+  }}
 body { /*For smaller screents*/
   align-content: start;
   margin: auto;
   font-size: 1em;
   font-family: 'Open Sans', sans-serif;
 }
+
 
 
 navbar{
