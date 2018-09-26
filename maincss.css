@@ -3,7 +3,7 @@
   --menu-position: fixed;
   --content-float: right;
 }
-@media (max-width: 600px){ 
+@media (max-width: 400px){ 
   :root{
     --menu-float: none;
     --menu-position: static;
@@ -16,9 +16,7 @@ body { /*For smaller screents*/
   font-family: 'Open Sans', sans-serif;
 }
 
-
-
-navbar{
+nav{
    display: flex;
    float: var(--menu-float);
    position: var(--menu-position);
@@ -29,7 +27,7 @@ navbar{
    transition: .3s background-color; 
    font-size: 1.1em;
   }
-  navbar a:hover {
+  nav a:hover {
    background-color: grey;
    color:white;
   }
